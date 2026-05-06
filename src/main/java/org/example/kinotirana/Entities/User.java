@@ -8,68 +8,68 @@ import java.util.Date;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
-    private String user_name;
-    private String user_surname;
-    private String user_email;
+    private Long userId;
+    private String userName;
+    private String userSurname;
+    private String userEmail;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date user_birthdate;
-    private boolean user_is_active;
+    private Date userBirthdate;
+    private boolean userIsActive;
 
-    public User(int user_id, String user_name, String user_surname, String user_email, Date user_birthdate, boolean user_is_active) {
-        this.user_id = user_id;
-        this.user_name = user_name;
-        this.user_surname = user_surname;
-        this.user_email = user_email;
-        this.user_birthdate = user_birthdate;
-        this.user_is_active = user_is_active;
+    public User(Long userId, String userName, String userSurname, String userEmail, Date userBirthdate, boolean userIsActive) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userSurname = userSurname;
+        this.userEmail = userEmail;
+        this.userBirthdate = userBirthdate;
+        this.userIsActive = userIsActive;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getUser_surname() {
-        return user_surname;
+    public String getUserSurname() {
+        return userSurname;
     }
 
-    public void setUser_surname(String user_surname) {
-        this.user_surname = user_surname;
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
     }
 
-    public String getUser_email() {
-        return user_email;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUser_email(String user_email) {
-        this.user_email = user_email;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public Date getUser_birthdate() {
-        return user_birthdate;
+    public boolean isUserIsActive() {
+        return userIsActive;
     }
 
-    public void setUser_birthdate(Date user_birthdate) {
-        this.user_birthdate = user_birthdate;
+    public void setUserIsActive(boolean userIsActive) {
+        this.userIsActive = userIsActive;
     }
 
-    public boolean isUser_is_active() {
-        return user_is_active;
+    public Date getUserBirthdate() {
+        return userBirthdate;
     }
 
-    public void setUser_is_active(boolean user_is_active) {
-        this.user_is_active = user_is_active;
+    public void setUserBirthdate(Date userBirthdate) {
+        this.userBirthdate = userBirthdate;
     }
 }

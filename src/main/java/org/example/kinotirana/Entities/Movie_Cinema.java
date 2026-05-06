@@ -7,49 +7,51 @@ import java.util.Date;
 @Entity
 @Table(name="MOVIE_CINEMA")
 public class Movie_Cinema {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int movieC_id;
+    private Long movieCId;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date movieC_timestamp;
-    private double movieC_price;
-    private int movieC_available_seats;
+    private Date movieCTimestamp;
+    private double movieCPrice;
+    private int movieCAvailSeats;
 
-    public Movie_Cinema(int movieC_id, Date movieC_timestamp, double movieC_price, int movieC_available_seats) {
-        this.movieC_id = movieC_id;
-        this.movieC_timestamp = movieC_timestamp;
-        this.movieC_price = movieC_price;
-        this.movieC_available_seats = movieC_available_seats;
+
+    public Movie_Cinema(Long movieCId, Date movieCTimestamp, double movieCPrice, int movieCAvailSeats) {
+        this.movieCId = movieCId;
+        this.movieCTimestamp = movieCTimestamp;
+        this.movieCPrice = movieCPrice;
+        this.movieCAvailSeats = movieCAvailSeats;
     }
 
-    public int getMovieC_id() {
-        return movieC_id;
+    public Long getMovieCId() {
+        return movieCId;
     }
 
-    public void setMovieC_id(int movieC_id) {
-        this.movieC_id = movieC_id;
+    public void setMovieCId(Long movieCId) {
+        this.movieCId = movieCId;
     }
 
-    public Date getMovieC_timestamp() {
-        return movieC_timestamp;
+    public Date getMovieCTimestamp() {
+        return movieCTimestamp;
     }
 
-    public void setMovieC_timestamp(Date movieC_timestamp) {
-        this.movieC_timestamp = movieC_timestamp;
+    public void setMovieCTimestamp(Date movieCTimestamp) {
+        this.movieCTimestamp = movieCTimestamp;
     }
 
-    public double getMovieC_price() {
-        return movieC_price;
+    public double getMovieCPrice() {
+        return movieCPrice;
     }
 
-    public void setMovieC_price(double movieC_price) {
-        this.movieC_price = movieC_price;
+    public void setMovieCPrice(double movieCPrice) {
+        this.movieCPrice = movieCPrice;
     }
 
-    public int getMovieC_available_seats() {
-        return movieC_available_seats;
+    public int getMovieCAvailSeats() {
+        return movieCAvailSeats;
     }
 
-    public void setMovieC_available_seats(int movieC_available_seats) {
-        this.movieC_available_seats = movieC_available_seats;
+    public void setMovieCAvailSeats(int movieCAvailSeats) {
+        this.movieCAvailSeats = movieCAvailSeats;
     }
 }

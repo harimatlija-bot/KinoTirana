@@ -1,9 +1,6 @@
 package org.example.kinotirana.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
@@ -12,69 +9,76 @@ import java.util.Date;
 @Table(name = "PAYMENT")
 
 public class Payment {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int payment_id;
-    private String payment_method;
-    private String payment_status;
-    private double payment_amount;
+    private Long paymentId;
+    private String paymentMethod;
+    private String paymentStatus;
+    private double paymentAmount;
     @CreationTimestamp
-    private Date payment_timestamp;
-    private int transaction_nr;
+    private Date paymentTimestamp;
+    private int transactionNr;
+    private boolean paymentIsActive;
 
-    public Payment(int payment_id, String payment_status, String payment_method, double payment_amount, Date payment_timestamp, int transaction_nr) {
-        this.payment_id = payment_id;
-        this.payment_status = payment_status;
-        this.payment_method = payment_method;
-        this.payment_amount = payment_amount;
-        this.payment_timestamp = payment_timestamp;
-        this.transaction_nr = transaction_nr;
+    public Payment(Long paymentId, String paymentMethod, String paymentStatus, double paymentAmount, Date paymentTimestamp, int transactionNr, boolean paymentIsActive) {
+        this.paymentId = paymentId;
+        this.paymentMethod = paymentMethod;
+        this.paymentStatus = paymentStatus;
+        this.paymentAmount = paymentAmount;
+        this.paymentTimestamp = paymentTimestamp;
+        this.transactionNr = transactionNr;
+        this.paymentIsActive = paymentIsActive;
     }
 
-    public int getPayment_id() {
-        return payment_id;
+    public Long getPaymentId() {
+        return paymentId;
     }
 
-    public void setPayment_id(int payment_id) {
-        this.payment_id = payment_id;
+    public void setPaymentId(Long paymentId) {
+        this.paymentId = paymentId;
     }
 
-    public String getPayment_method() {
-        return payment_method;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setPayment_method(String payment_method) {
-        this.payment_method = payment_method;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    public String getPayment_status() {
-        return payment_status;
+    public String getPaymentStatus() {
+        return paymentStatus;
     }
 
-    public void setPayment_status(String payment_status) {
-        this.payment_status = payment_status;
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 
-    public double getPayment_amount() {
-        return payment_amount;
+    public double getPaymentAmount() {
+        return paymentAmount;
     }
 
-    public void setPayment_amount(double payment_amount) {
-        this.payment_amount = payment_amount;
+    public void setPaymentAmount(double paymentAmount) {
+        this.paymentAmount = paymentAmount;
     }
 
-    public Date getPayment_timestamp() {
-        return payment_timestamp;
+    public Date getPaymentTimestamp() {
+        return paymentTimestamp;
     }
 
-    public void setPayment_timestamp(Date payment_timestamp) {
-        this.payment_timestamp = payment_timestamp;
+    public void setPaymentTimestamp(Date paymentTimestamp) {
+        this.paymentTimestamp = paymentTimestamp;
     }
 
-    public int getTransaction_nr() {
-        return transaction_nr;
+    public int getTransactionNr() {
+        return transactionNr;
     }
 
-    public void setTransaction_nr(int transaction_nr) {
-        this.transaction_nr = transaction_nr;
+    public void setTransactionNr(int transactionNr) {
+        this.transactionNr = transactionNr;
     }
+
+    public boolean isPaymentIsActive() {return paymentIsActive;}
+
+    public void setPaymentIsActive(boolean paymentIsActive) {this.paymentIsActive = paymentIsActive;}
 }

@@ -1,9 +1,6 @@
 package org.example.kinotirana.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
@@ -11,49 +8,50 @@ import java.util.Date;
 @Entity
 @Table(name = "RESERVATION")
 public class Reservation {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int reservation_id;
+    private Long reservationId;
     @CreationTimestamp
-    private Date reservation_timestamp;
-    private boolean reservation_confirmed;
-    private boolean reservation_is_active;
+    private Date reservationTimestamp;
+    private boolean reservationConfirmed;
+    private boolean reservationIsActive;
 
-    public Reservation(int reservation_id, Date reservation_timestamp, boolean reservation_confirmed, boolean reservation_is_active) {
-        this.reservation_id = reservation_id;
-        this.reservation_timestamp = reservation_timestamp;
-        this.reservation_confirmed = reservation_confirmed;
-        this.reservation_is_active = reservation_is_active;
+    public Reservation(Long reservationId, Date reservationTimestamp, boolean reservationConfirmed, boolean reservationIsActive) {
+        this.reservationId = reservationId;
+        this.reservationTimestamp = reservationTimestamp;
+        this.reservationConfirmed = reservationConfirmed;
+        this.reservationIsActive = reservationIsActive;
     }
 
-    public int getReservation_id() {
-        return reservation_id;
+    public Long getReservationId() {
+        return reservationId;
     }
 
-    public void setReservation_id(int reservation_id) {
-        this.reservation_id = reservation_id;
+    public void setReservationId(Long reservationId) {
+        this.reservationId = reservationId;
     }
 
-    public Date getReservation_timestamp() {
-        return reservation_timestamp;
+    public Date getReservationTimestamp() {
+        return reservationTimestamp;
     }
 
-    public void setReservation_timestamp(Date reservation_timestamp) {
-        this.reservation_timestamp = reservation_timestamp;
+    public void setReservationTimestamp(Date reservationTimestamp) {
+        this.reservationTimestamp = reservationTimestamp;
     }
 
-    public boolean isReservation_confirmed() {
-        return reservation_confirmed;
+    public boolean isReservationConfirmed() {
+        return reservationConfirmed;
     }
 
-    public void setReservation_confirmed(boolean reservation_confirmed) {
-        this.reservation_confirmed = reservation_confirmed;
+    public void setReservationConfirmed(boolean reservationConfirmed) {
+        this.reservationConfirmed = reservationConfirmed;
     }
 
-    public boolean isReservation_is_active() {
-        return reservation_is_active;
+    public boolean isReservationIsActive() {
+        return reservationIsActive;
     }
 
-    public void setReservation_is_active(boolean reservation_is_active) {
-        this.reservation_is_active = reservation_is_active;
+    public void setReservationIsActive(boolean reservationIsActive) {
+        this.reservationIsActive = reservationIsActive;
     }
 }

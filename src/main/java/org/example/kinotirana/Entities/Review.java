@@ -1,9 +1,6 @@
 package org.example.kinotirana.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
@@ -11,59 +8,60 @@ import java.util.Date;
 @Entity
 @Table(name = "REVIEW")
 public class Review {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int review_id;
-    private double review_rate;
-    private String review_comment;
+    private Long reviewId;
+    private double reviewRate;
+    private String reviewComment;
     @CreationTimestamp
-    private Date review_date;
-    private boolean review_is_active;
+    private Date reviewDate;
+    private boolean reviewIsActive;
 
-    public Review(int review_id, double review_rate, String review_comment, Date review_date, boolean review_is_active) {
-        this.review_id = review_id;
-        this.review_rate = review_rate;
-        this.review_comment = review_comment;
-        this.review_date = review_date;
-        this.review_is_active = review_is_active;
+    public Review(Long reviewId, double reviewRate, String reviewComment, Date reviewDate, boolean reviewIsActive) {
+        this.reviewId = reviewId;
+        this.reviewRate = reviewRate;
+        this.reviewComment = reviewComment;
+        this.reviewDate = reviewDate;
+        this.reviewIsActive = reviewIsActive;
     }
 
-    public int getReview_id() {
-        return review_id;
+    public Long getReviewId() {
+        return reviewId;
     }
 
-    public void setReview_id(int review_id) {
-        this.review_id = review_id;
+    public void setReviewId(Long reviewId) {
+        this.reviewId = reviewId;
     }
 
-    public double getReview_rate() {
-        return review_rate;
+    public double getReviewRate() {
+        return reviewRate;
     }
 
-    public void setReview_rate(double review_rate) {
-        this.review_rate = review_rate;
+    public void setReviewRate(double reviewRate) {
+        this.reviewRate = reviewRate;
     }
 
-    public String getReview_comment() {
-        return review_comment;
+    public String getReviewComment() {
+        return reviewComment;
     }
 
-    public void setReview_comment(String review_comment) {
-        this.review_comment = review_comment;
+    public void setReviewComment(String reviewComment) {
+        this.reviewComment = reviewComment;
     }
 
-    public Date getReview_date() {
-        return review_date;
+    public Date getReviewDate() {
+        return reviewDate;
     }
 
-    public void setReview_date(Date review_date) {
-        this.review_date = review_date;
+    public void setReviewDate(Date reviewDate) {
+        this.reviewDate = reviewDate;
     }
 
-    public boolean isReview_is_active() {
-        return review_is_active;
+    public boolean isReviewIsActive() {
+        return reviewIsActive;
     }
 
-    public void setReview_is_active(boolean review_is_active) {
-        this.review_is_active = review_is_active;
+    public void setReviewIsActive(boolean reviewIsActive) {
+        this.reviewIsActive = reviewIsActive;
     }
 }

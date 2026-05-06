@@ -10,111 +10,112 @@ import java.util.Date;
 @Entity
 @Table(name="MOVIE")
 public class Movie {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int movie_id;
-    private String movie_title;
-    private String movie_genre;
-    private String movie_director;
-    private String movie_cast;
+    private Long movieId;
+    private String movieTitle;
+    private String movieGenre;
+    private String movieDirector;
+    private String movieCast;
     @Lob
-    private String movie_synopsis;
+    private String movieSynopsis;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date movie_releaseDate;
-    private Duration movie_duration;
+    private Date movieReleaseDate;
+    private Duration movieDuration;
     @URL(message = "Must be a valid URL")
-    private String movie_trailerUrl;
-    private boolean movie_isActive;
+    private String movieTrailerUrl;
+    private boolean movieIsActive;
 
-    public Movie(int movie_id, String movie_title, String movie_genre, String movie_director, String movie_cast, String movie_synopsis, Date movie_releaseDate, Duration movie_duration, String movie_trailerUrl, boolean movie_isActive) {
-        this.movie_id = movie_id;
-        this.movie_title = movie_title;
-        this.movie_genre = movie_genre;
-        this.movie_director = movie_director;
-        this.movie_cast = movie_cast;
-        this.movie_synopsis = movie_synopsis;
-        this.movie_releaseDate = movie_releaseDate;
-        this.movie_duration = movie_duration;
-        this.movie_trailerUrl = movie_trailerUrl;
-        this.movie_isActive = movie_isActive;
+    public Movie(Long movieId, String movieTitle, String movieGenre, String movieDirector, String movieCast, String movieSynopsis, Date movieReleaseDate, Duration movieDuration, String movieTrailerUrl, boolean movieIsActive) {
+        this.movieId = movieId;
+        this.movieTitle = movieTitle;
+        this.movieGenre = movieGenre;
+        this.movieDirector = movieDirector;
+        this.movieCast = movieCast;
+        this.movieSynopsis = movieSynopsis;
+        this.movieReleaseDate = movieReleaseDate;
+        this.movieDuration = movieDuration;
+        this.movieTrailerUrl = movieTrailerUrl;
+        this.movieIsActive = movieIsActive;
     }
 
-    public int getMovie_id() {
-        return movie_id;
+    public Long getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_id(int movie_id) {
-        this.movie_id = movie_id;
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
     }
 
-    public String getMovie_title() {
-        return movie_title;
+    public String getMovieTitle() {
+        return movieTitle;
     }
 
-    public void setMovie_title(String movie_title) {
-        this.movie_title = movie_title;
+    public void setMovieTitle(String movieTitle) {
+        this.movieTitle = movieTitle;
     }
 
-    public String getMovie_genre() {
-        return movie_genre;
+    public String getMovieGenre() {
+        return movieGenre;
     }
 
-    public void setMovie_genre(String movie_genre) {
-        this.movie_genre = movie_genre;
+    public void setMovieGenre(String movieGenre) {
+        this.movieGenre = movieGenre;
     }
 
-    public String getMovie_director() {
-        return movie_director;
+    public String getMovieDirector() {
+        return movieDirector;
     }
 
-    public void setMovie_director(String movie_director) {
-        this.movie_director = movie_director;
+    public void setMovieDirector(String movieDirector) {
+        this.movieDirector = movieDirector;
     }
 
-    public String getMovie_cast() {
-        return movie_cast;
+    public String getMovieCast() {
+        return movieCast;
     }
 
-    public void setMovie_cast(String movie_cast) {
-        this.movie_cast = movie_cast;
+    public void setMovieCast(String movieCast) {
+        this.movieCast = movieCast;
     }
 
-    public String getMovie_synopsis() {
-        return movie_synopsis;
+    public String getMovieSynopsis() {
+        return movieSynopsis;
     }
 
-    public void setMovie_synopsis(String movie_synopsis) {
-        this.movie_synopsis = movie_synopsis;
+    public void setMovieSynopsis(String movieSynopsis) {
+        this.movieSynopsis = movieSynopsis;
     }
 
-    public Date getMovie_releaseDate() {
-        return movie_releaseDate;
+    public Date getMovieReleaseDate() {
+        return movieReleaseDate;
     }
 
-    public void setMovie_releaseDate(Date movie_releaseDate) {
-        this.movie_releaseDate = movie_releaseDate;
+    public void setMovieReleaseDate(Date movieReleaseDate) {
+        this.movieReleaseDate = movieReleaseDate;
     }
 
-    public Duration getMovie_duration() {
-        return movie_duration;
+    public Duration getMovieDuration() {
+        return movieDuration;
     }
 
-    public void setMovie_duration(Duration movie_duration) {
-        this.movie_duration = movie_duration;
+    public void setMovieDuration(Duration movieDuration) {
+        this.movieDuration = movieDuration;
     }
 
-    public String getMovie_trailerUrl() {
-        return movie_trailerUrl;
+    public String getMovieTrailerUrl() {
+        return movieTrailerUrl;
     }
 
-    public void setMovie_trailerUrl(String movie_trailerUrl) {
-        this.movie_trailerUrl = movie_trailerUrl;
+    public void setMovieTrailerUrl(String movieTrailerUrl) {
+        this.movieTrailerUrl = movieTrailerUrl;
     }
 
-    public boolean isMovie_isActive() {
-        return movie_isActive;
+    public boolean isMovieIsActive() {
+        return movieIsActive;
     }
 
-    public void setMovie_isActive(boolean movie_isActive) {
-        this.movie_isActive = movie_isActive;
+    public void setMovieIsActive(boolean movieIsActive) {
+        this.movieIsActive = movieIsActive;
     }
 }

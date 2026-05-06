@@ -7,80 +7,73 @@ import java.util.Date;
 @Entity
 @Table
 public class Cinema {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cinema_id;
-    private String cinema_name;
-    private String cinema_address;
+    private Long cinemaId;
+    private String cinemaName;
+    private Address cinemaAddress;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date cinema_openingTime;
+    private Date cinemaOpeningTime;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date cinema_closingTime;
-    private int cinema_openingDay;
-    private boolean cinema_isActive;
+    private Date cinemaClosingTime;
+    private int cinemaOpeningDay;
+    private boolean cinemaIsActive;
 
-    public Cinema(int cinema_id, String cinema_name, String cinema_address, Date cinema_openingTime, Date cinema_closingTime, int cinema_openingDay, boolean cinema_isActive) {
-        this.cinema_id = cinema_id;
-        this.cinema_name = cinema_name;
-        this.cinema_address = cinema_address;
-        this.cinema_openingTime = cinema_openingTime;
-        this.cinema_closingTime = cinema_closingTime;
-        this.cinema_openingDay = cinema_openingDay;
-        this.cinema_isActive = cinema_isActive;
+    public Cinema() {}
+
+    public Long getCinemaId() {
+        return cinemaId;
     }
 
-    public int getCinema_id() {
-        return cinema_id;
+    public void setCinemaId(Long cinemaId) {
+        this.cinemaId = cinemaId;
     }
 
-    public void setCinema_id(int cinema_id) {
-        this.cinema_id = cinema_id;
+    public String getCinemaName() {
+        return cinemaName;
     }
 
-    public String getCinema_name() {
-        return cinema_name;
+    public void setCinemaName(String cinemaName) {
+        this.cinemaName = cinemaName;
     }
 
-    public void setCinema_name(String cinema_name) {
-        this.cinema_name = cinema_name;
+    public Address getCinemaAddress() {
+        return cinemaAddress;
     }
 
-    public String getCinema_address() {
-        return cinema_address;
+    public void setCinemaAddress(Address cinemaAddress) {
+        this.cinemaAddress = cinemaAddress;
     }
 
-    public void setCinema_address(String cinema_address) {
-        this.cinema_address = cinema_address;
+    public Date getCinemaOpeningTime() {
+        return cinemaOpeningTime;
     }
 
-    public Date getCinema_openingTime() {
-        return cinema_openingTime;
+    public void setCinemaOpeningTime(Date cinemaOpeningTime) {
+        this.cinemaOpeningTime = cinemaOpeningTime;
     }
 
-    public void setCinema_openingTime(Date cinema_openingTime) {
-        this.cinema_openingTime = cinema_openingTime;
+    public Date getCinemaClosingTime() {
+        return cinemaClosingTime;
     }
 
-    public Date getCinema_closingTime() {
-        return cinema_closingTime;
+    public void setCinemaClosingTime(Date cinemaClosingTime) {
+        this.cinemaClosingTime = cinemaClosingTime;
     }
 
-    public void setCinema_closingTime(Date cinema_closingTime) {
-        this.cinema_closingTime = cinema_closingTime;
+    public int getCinemaOpeningDay() {
+        return cinemaOpeningDay;
     }
 
-    public int getCinema_openingDay() {
-        return cinema_openingDay;
+    public void setCinemaOpeningDay(int cinemaOpeningDay) {
+        this.cinemaOpeningDay = cinemaOpeningDay;
     }
 
-    public void setCinema_openingDay(int cinema_openingDay) {
-        this.cinema_openingDay = cinema_openingDay;
+    public boolean isCinemaIsActive() {
+        return cinemaIsActive;
     }
 
-    public boolean isCinema_isActive() {
-        return cinema_isActive;
-    }
-
-    public void setCinema_isActive(boolean cinema_isActive) {
-        this.cinema_isActive = cinema_isActive;
+    public void setCinemaIsActive(boolean cinemaIsActive) {
+        this.cinemaIsActive = cinemaIsActive;
     }
 }

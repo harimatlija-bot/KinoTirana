@@ -7,90 +7,91 @@ import java.util.Date;
 @Entity
 @Table(name = "Event")
 public class Event {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int event_id;
-    private String event_access;
+    private Long eventId;
+    private String eventAccess;
     @Lob
-    private String event_description;
-    private String event_title;
+    private String eventDescription;
+    private String eventTitle;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date event_timestamp;
-    private String event_location;
-    private boolean event_online;
-    private boolean event_isActive;
+    private Date eventTimestamp;
+    private Address eventLocation;
+    private boolean eventOnline;
+    private boolean eventIsActive;
 
-    public Event(int event_id, String event_access, String event_description, String event_title, boolean event_isActive, boolean event_online, String event_location, Date event_timestamp) {
-        this.event_id = event_id;
-        this.event_access = event_access;
-        this.event_description = event_description;
-        this.event_title = event_title;
-        this.event_isActive = event_isActive;
-        this.event_online = event_online;
-        this.event_location = event_location;
-        this.event_timestamp = event_timestamp;
+    public Event(Long eventId, String eventAccess, String eventDescription, String eventTitle, Date eventTimestamp, Address eventLocation, boolean eventOnline, boolean eventIsActive) {
+        this.eventId = eventId;
+        this.eventAccess = eventAccess;
+        this.eventDescription = eventDescription;
+        this.eventTitle = eventTitle;
+        this.eventTimestamp = eventTimestamp;
+        this.eventLocation = eventLocation;
+        this.eventOnline = eventOnline;
+        this.eventIsActive = eventIsActive;
     }
 
-    public int getEvent_id() {
-        return event_id;
+    public Long getEventId() {
+        return eventId;
     }
 
-    public void setEvent_id(int event_id) {
-        this.event_id = event_id;
+    public void setEventId(Long eventId) {
+        this.eventId = eventId;
     }
 
-    public String getEvent_access() {
-        return event_access;
+    public String getEventAccess() {
+        return eventAccess;
     }
 
-    public void setEvent_access(String event_access) {
-        this.event_access = event_access;
+    public void setEventAccess(String eventAccess) {
+        this.eventAccess = eventAccess;
     }
 
-    public String getEvent_description() {
-        return event_description;
+    public String getEventDescription() {
+        return eventDescription;
     }
 
-    public void setEvent_description(String event_description) {
-        this.event_description = event_description;
+    public void setEventDescription(String eventDescription) {
+        this.eventDescription = eventDescription;
     }
 
-    public String getEvent_title() {
-        return event_title;
+    public String getEventTitle() {
+        return eventTitle;
     }
 
-    public void setEvent_title(String event_title) {
-        this.event_title = event_title;
+    public void setEventTitle(String eventTitle) {
+        this.eventTitle = eventTitle;
     }
 
-    public Date getEvent_timestamp() {
-        return event_timestamp;
+    public Date getEventTimestamp() {
+        return eventTimestamp;
     }
 
-    public void setEvent_timestamp(Date event_timestamp) {
-        this.event_timestamp = event_timestamp;
+    public void setEventTimestamp(Date eventTimestamp) {
+        this.eventTimestamp = eventTimestamp;
     }
 
-    public String getEvent_location() {
-        return event_location;
+    public Address getEventLocation() {
+        return eventLocation;
     }
 
-    public void setEvent_location(String event_location) {
-        this.event_location = event_location;
+    public void setEventLocation(Address eventLocation) {
+        this.eventLocation = eventLocation;
     }
 
-    public boolean isEvent_online() {
-        return event_online;
+    public boolean isEventOnline() {
+        return eventOnline;
     }
 
-    public void setEvent_online(boolean event_online) {
-        this.event_online = event_online;
+    public void setEventOnline(boolean eventOnline) {
+        this.eventOnline = eventOnline;
     }
 
-    public boolean isEvent_isActive() {
-        return event_isActive;
+    public boolean isEventIsActive() {
+        return eventIsActive;
     }
 
-    public void setEvent_isActive(boolean event_isActive) {
-        this.event_isActive = event_isActive;
+    public void setEventIsActive(boolean eventIsActive) {
+        this.eventIsActive = eventIsActive;
     }
 }
