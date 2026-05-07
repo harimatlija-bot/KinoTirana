@@ -1,6 +1,8 @@
 package org.example.kinotirana.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;
 
@@ -12,21 +14,18 @@ public class Movie_Cinema {
     private Long movieCId;
     @Temporal(TemporalType.TIMESTAMP)
     private Date movieCTimestamp;
+    @NotNull
     private double movieCPrice;
+    @NotNull
+    @Min(0)
     private int movieCAvailSeats;
 
 
-    public Movie_Cinema(Long movieCId, Date movieCTimestamp, double movieCPrice, int movieCAvailSeats) {
-        this.movieCId = movieCId;
-        this.movieCTimestamp = movieCTimestamp;
-        this.movieCPrice = movieCPrice;
-        this.movieCAvailSeats = movieCAvailSeats;
-    }
+    public Movie_Cinema(){}
 
     public Long getMovieCId() {
         return movieCId;
     }
-
     public void setMovieCId(Long movieCId) {
         this.movieCId = movieCId;
     }
@@ -34,7 +33,6 @@ public class Movie_Cinema {
     public Date getMovieCTimestamp() {
         return movieCTimestamp;
     }
-
     public void setMovieCTimestamp(Date movieCTimestamp) {
         this.movieCTimestamp = movieCTimestamp;
     }
@@ -42,7 +40,6 @@ public class Movie_Cinema {
     public double getMovieCPrice() {
         return movieCPrice;
     }
-
     public void setMovieCPrice(double movieCPrice) {
         this.movieCPrice = movieCPrice;
     }
@@ -50,7 +47,6 @@ public class Movie_Cinema {
     public int getMovieCAvailSeats() {
         return movieCAvailSeats;
     }
-
     public void setMovieCAvailSeats(int movieCAvailSeats) {
         this.movieCAvailSeats = movieCAvailSeats;
     }

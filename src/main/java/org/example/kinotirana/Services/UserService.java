@@ -16,7 +16,7 @@ public class UserService {
     }
 
     public List<User> getAll() {
-        return userRep.findAll();
+        return userRep.findByUserIsActiveTrue();
     }
 
     public User create(User user) {
@@ -31,6 +31,7 @@ public class UserService {
         u.setUserBirthdate(newuser.getUserBirthdate());
         u.setUserEmail(newuser.getUserEmail());
         u.setUserIsActive(newuser.isUserIsActive());
+        u.setUserPassword(newuser.getUserPassword());
         return userRep.save(u);
     }
     @Transactional

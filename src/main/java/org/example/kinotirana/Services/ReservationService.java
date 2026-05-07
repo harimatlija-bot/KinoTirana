@@ -14,7 +14,7 @@ public class ReservationService {
         this.reservationRep=reservationRep;
     }
     public List<Reservation> getAll(){
-        return reservationRep.findAll();
+        return reservationRep.fingByReservationIsActiveTrue();
     }
     public Reservation create (Reservation reservation){
         return reservationRep.save(reservation);

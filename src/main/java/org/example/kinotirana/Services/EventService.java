@@ -14,8 +14,9 @@ public class EventService {
         this.eventRep = eventRep;
     }
     public List <Event> getAll() {
-        return eventRep.findAll();
+        return eventRep.fingByEventIsActiveTrue();
     }
+
     public Event create(Event event) {
         return eventRep.save(event);
     }

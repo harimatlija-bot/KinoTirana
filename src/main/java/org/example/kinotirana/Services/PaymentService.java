@@ -15,7 +15,7 @@ public class PaymentService {
         this.paymentRep = paymentRep;
     }
     public List<Payment> getAll(){
-        return paymentRep.findAll();
+        return paymentRep.fingByPaymentIsActiveTrue();
     }
     public Payment create (Payment payment){
         return paymentRep.save(payment);
@@ -24,7 +24,9 @@ public class PaymentService {
     public Payment update (Long paymentId, Payment newpayment){
         Payment p = paymentRep.findById(paymentId).orElseThrow(() -> new RuntimeException("Payment not found"));
         p.setPaymentMethod(newpayment.getPaymentMethod());
-        p.setPaymentStatus(newpayment.getPaymentStatus());
+        p.setPaymentCompleted(newpayment.isPaymentCompleted());
+        p.setCardHolderName(newpayment.getCardHolderName());
+        p.setCardLastFourDigits(newpayment.getCardLastFourDigits());
         p.setPaymentAmount(newpayment.getPaymentAmount());
         p.setPaymentTimestamp(newpayment.getPaymentTimestamp());
         p.setTransactionNr(newpayment.getTransactionNr());

@@ -1,6 +1,8 @@
 package org.example.kinotirana.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;
 
@@ -10,47 +12,34 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long eventId;
-    private String eventAccess;
+    @Enumerated(EnumType.STRING)
+    private EventAccess eventAccess;
     @Lob
     private String eventDescription;
+    @NotBlank
     private String eventTitle;
     @Temporal(TemporalType.TIMESTAMP)
     private Date eventTimestamp;
+    @NotNull
     private Address eventLocation;
     private boolean eventOnline;
-    private boolean eventIsActive;
+    private boolean eventIsActive = true;
 
-    public Event(Long eventId, String eventAccess, String eventDescription, String eventTitle, Date eventTimestamp, Address eventLocation, boolean eventOnline, boolean eventIsActive) {
-        this.eventId = eventId;
-        this.eventAccess = eventAccess;
-        this.eventDescription = eventDescription;
-        this.eventTitle = eventTitle;
-        this.eventTimestamp = eventTimestamp;
-        this.eventLocation = eventLocation;
-        this.eventOnline = eventOnline;
-        this.eventIsActive = eventIsActive;
-    }
+    public Event(){}
 
     public Long getEventId() {
         return eventId;
     }
-
     public void setEventId(Long eventId) {
         this.eventId = eventId;
     }
 
-    public String getEventAccess() {
-        return eventAccess;
-    }
-
-    public void setEventAccess(String eventAccess) {
-        this.eventAccess = eventAccess;
-    }
+    public EventAccess getEventAccess() {return eventAccess;}
+    public void setEventAccess(EventAccess eventAccess) {this.eventAccess = eventAccess;}
 
     public String getEventDescription() {
         return eventDescription;
     }
-
     public void setEventDescription(String eventDescription) {
         this.eventDescription = eventDescription;
     }
@@ -58,7 +47,6 @@ public class Event {
     public String getEventTitle() {
         return eventTitle;
     }
-
     public void setEventTitle(String eventTitle) {
         this.eventTitle = eventTitle;
     }
@@ -66,7 +54,6 @@ public class Event {
     public Date getEventTimestamp() {
         return eventTimestamp;
     }
-
     public void setEventTimestamp(Date eventTimestamp) {
         this.eventTimestamp = eventTimestamp;
     }
@@ -74,7 +61,6 @@ public class Event {
     public Address getEventLocation() {
         return eventLocation;
     }
-
     public void setEventLocation(Address eventLocation) {
         this.eventLocation = eventLocation;
     }
@@ -82,15 +68,11 @@ public class Event {
     public boolean isEventOnline() {
         return eventOnline;
     }
-
     public void setEventOnline(boolean eventOnline) {
         this.eventOnline = eventOnline;
     }
 
-    public boolean isEventIsActive() {
-        return eventIsActive;
-    }
-
+    public boolean isEventIsActive() {return eventIsActive;}
     public void setEventIsActive(boolean eventIsActive) {
         this.eventIsActive = eventIsActive;
     }

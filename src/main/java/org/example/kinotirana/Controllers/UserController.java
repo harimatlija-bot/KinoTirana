@@ -1,5 +1,6 @@
 package org.example.kinotirana.Controllers;
 
+import jakarta.validation.Valid;
 import org.example.kinotirana.Entities.User;
 import org.example.kinotirana.Services.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,6 @@ import java.util.List;
 @RequestMapping("/përdorues")
 public class UserController {
     private final UserService userService;
-
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -19,11 +19,11 @@ public class UserController {
         return userService.getAll();
     }
     @PostMapping
-    public User create(@RequestBody User user) {
+    public User create(@Valid @RequestBody User user) {
         return userService.create(user);
     }
     @PutMapping("/{id}")
-    public User update(@PathVariable Long id, @RequestBody User user) {
+    public User update(@PathVariable Long id, @Valid @RequestBody User user) {
         return userService.update(id, user);
     }
     @DeleteMapping("/{id}")

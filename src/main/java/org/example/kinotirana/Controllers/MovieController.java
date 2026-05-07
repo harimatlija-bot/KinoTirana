@@ -1,5 +1,6 @@
 package org.example.kinotirana.Controllers;
 
+import jakarta.validation.Valid;
 import org.example.kinotirana.Entities.Movie;
 import org.example.kinotirana.Services.MovieService;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +20,11 @@ public class MovieController {
         return movieService.getAll();
     }
     @PostMapping
-    public Movie create(@RequestBody Movie movie) {
+    public Movie create(@Valid @RequestBody Movie movie) {
         return movieService.create(movie);
     }
     @PutMapping("/{id}")
-    public Movie update(@PathVariable Long id, @RequestBody Movie movie) {
+    public Movie update(@PathVariable Long id, @Valid @RequestBody Movie movie) {
         return movieService.update(id, movie);
     }
     @DeleteMapping("/{id}")

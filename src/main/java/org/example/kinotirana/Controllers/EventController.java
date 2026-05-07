@@ -1,5 +1,6 @@
 package org.example.kinotirana.Controllers;
 
+import jakarta.validation.Valid;
 import org.example.kinotirana.Entities.Event;
 import org.example.kinotirana.Services.EventService;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +20,11 @@ public class EventController {
         return eventService.getAll();
     }
     @PostMapping
-    public Event create(@RequestBody Event event) {
+    public Event create(@Valid @RequestBody Event event) {
         return eventService.create(event);
     }
     @PutMapping("/{id}")
-    public Event update(@PathVariable Long id, @RequestBody Event event) {
+    public Event update(@PathVariable Long id, @Valid @RequestBody Event event) {
         return eventService.update(id, event);
     }
     @DeleteMapping("/{id}")

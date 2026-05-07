@@ -14,7 +14,7 @@ public class MovieService {
         this.movieRep = movieRep;
     }
     public List<Movie> getAll(){
-        return movieRep.findAll();
+        return movieRep.fingByMovieIsActiveTrue();
     }
     public Movie create (Movie movie){
         return movieRep.save(movie);

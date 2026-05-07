@@ -14,7 +14,7 @@ public class ReviewService {
         this.reviewRep = reviewRep;
     }
     public List<Review> getAll(){
-        return reviewRep.findAll();
+        return reviewRep.fingByReviewIsActiveTrue();
     }
     public Review create (Review review){
         return reviewRep.save(review);

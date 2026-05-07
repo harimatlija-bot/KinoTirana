@@ -1,6 +1,11 @@
 package org.example.kinotirana.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.util.Date;
 
 @Entity
@@ -9,21 +14,21 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
+    @NotBlank(message = "Name is required")
     private String userName;
+    @NotBlank
     private String userSurname;
+    @NotBlank(message = "Email is required")
     private String userEmail;
-    @Temporal(TemporalType.TIMESTAMP)
+    @NotNull
+    @Size(min = 4, max = 32)
+    private String userPassword;
+    @Past
+    @Temporal(TemporalType.DATE)
     private Date userBirthdate;
-    private boolean userIsActive;
+    private boolean userIsActive = true;
 
-    public User(Long userId, String userName, String userSurname, String userEmail, Date userBirthdate, boolean userIsActive) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userSurname = userSurname;
-        this.userEmail = userEmail;
-        this.userBirthdate = userBirthdate;
-        this.userIsActive = userIsActive;
-    }
+    public User() {}
 
     public Long getUserId() {
         return userId;
@@ -72,4 +77,8 @@ public class User {
     public void setUserBirthdate(Date userBirthdate) {
         this.userBirthdate = userBirthdate;
     }
+
+    public String getUserPassword() {return userPassword;}
+
+    public void setUserPassword(String userPassword) {this.userPassword = userPassword;}
 }

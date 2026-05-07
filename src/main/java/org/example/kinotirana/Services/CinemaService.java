@@ -13,11 +13,9 @@ public class CinemaService {
     public CinemaService(CinemaRep cinemaRep) {
         this.cinemaRep = cinemaRep;
     }
-
     public List<Cinema> getAll() {
-        return cinemaRep.findAll();
+        return cinemaRep.findByCinemaIsActiveTrue();
     }
-
     public Cinema create(Cinema cinema) {
         return cinemaRep.save(cinema);
     }
