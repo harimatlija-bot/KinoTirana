@@ -30,7 +30,6 @@ public class Payment {
     @CreationTimestamp
     private Date paymentTimestamp;
     @NotNull
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int transactionNr;
     private boolean paymentIsActive = true;
 
