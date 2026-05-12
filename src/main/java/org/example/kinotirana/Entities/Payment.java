@@ -34,7 +34,7 @@ public class Payment {
     @CreationTimestamp
     private Date paymentTimestamp;
     @NotNull
-    private int transactionNr;
+    private Long transactionNr;
     private boolean paymentIsActive = true;
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
