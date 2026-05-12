@@ -9,5 +9,4 @@ public class KinoTiranaApplication {
     public static void main(String[] args) {
         SpringApplication.run(KinoTiranaApplication.class, args);
     }
-
 }

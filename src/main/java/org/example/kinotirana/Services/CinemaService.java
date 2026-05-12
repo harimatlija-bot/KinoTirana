@@ -28,7 +28,6 @@ public class CinemaService {
         c.setCinemaClosingTime(newCinema.getCinemaClosingTime());
         c.setCinemaOpeningDay(newCinema.getCinemaOpeningDay());
         c.setCinemaIsActive(newCinema.isCinemaIsActive());
-
         return cinemaRep.save(c);
     }
     @Transactional

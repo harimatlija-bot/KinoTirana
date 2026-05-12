@@ -5,12 +5,26 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity
 @Table(name = "USER")
 public class User {
+    @OneToMany(mappedBy = "user")
+    private List<Reservation> reservations;
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
@@ -27,58 +41,4 @@ public class User {
     @Temporal(TemporalType.DATE)
     private Date userBirthdate;
     private boolean userIsActive = true;
-
-    public User() {}
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserSurname() {
-        return userSurname;
-    }
-
-    public void setUserSurname(String userSurname) {
-        this.userSurname = userSurname;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public boolean isUserIsActive() {
-        return userIsActive;
-    }
-
-    public void setUserIsActive(boolean userIsActive) {
-        this.userIsActive = userIsActive;
-    }
-
-    public Date getUserBirthdate() {
-        return userBirthdate;
-    }
-
-    public void setUserBirthdate(Date userBirthdate) {
-        this.userBirthdate = userBirthdate;
-    }
-
-    public String getUserPassword() {return userPassword;}
-
-    public void setUserPassword(String userPassword) {this.userPassword = userPassword;}
 }

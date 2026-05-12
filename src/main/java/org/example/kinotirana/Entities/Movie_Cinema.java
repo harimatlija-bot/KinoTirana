@@ -3,12 +3,30 @@ package org.example.kinotirana.Entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity
 @Table(name="MOVIE_CINEMA")
 public class Movie_Cinema {
+    @OneToMany(mappedBy = "movie_cinema")
+    private List<Reservation> reservations;
+    @ManyToOne
+    @JoinColumn(name = "movieId")
+    private Movie movie;
+    @ManyToOne
+    @JoinColumn(name = "cinemaId")
+    private Cinema cinema;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long movieCId;
@@ -19,35 +37,4 @@ public class Movie_Cinema {
     @NotNull
     @Min(0)
     private int movieCAvailSeats;
-
-
-    public Movie_Cinema(){}
-
-    public Long getMovieCId() {
-        return movieCId;
-    }
-    public void setMovieCId(Long movieCId) {
-        this.movieCId = movieCId;
-    }
-
-    public Date getMovieCTimestamp() {
-        return movieCTimestamp;
-    }
-    public void setMovieCTimestamp(Date movieCTimestamp) {
-        this.movieCTimestamp = movieCTimestamp;
-    }
-
-    public double getMovieCPrice() {
-        return movieCPrice;
-    }
-    public void setMovieCPrice(double movieCPrice) {
-        this.movieCPrice = movieCPrice;
-    }
-
-    public int getMovieCAvailSeats() {
-        return movieCAvailSeats;
-    }
-    public void setMovieCAvailSeats(int movieCAvailSeats) {
-        this.movieCAvailSeats = movieCAvailSeats;
-    }
 }
