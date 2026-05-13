@@ -1,0 +1,37 @@
+package org.example.kinotirana.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.util.Date;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
+@Entity
+@Table(name = "REVIEW")
+public class Review {
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "movieId")
+    private Movie movie;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long reviewId;
+    @NotNull
+    @Min(1)
+    @Max(10)
+    private double reviewRate;
+    @NotBlank
+    private String reviewComment;
+    @NotNull
+    @CreationTimestamp
+    private Date reviewDate;
+    private boolean reviewIsActive = true;
+}
