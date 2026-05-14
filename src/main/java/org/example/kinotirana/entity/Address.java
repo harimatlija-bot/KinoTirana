@@ -16,7 +16,6 @@ public class Address {
     private String cityName;
     @NotBlank
     private String streetName;
-    @NotNull
     private double streetNr;
     @NotNull
     private int zipCode;

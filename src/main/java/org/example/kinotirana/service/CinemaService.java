@@ -1,6 +1,7 @@
 package org.example.kinotirana.service;
 
 import org.example.kinotirana.entity.Cinema;
+import org.example.kinotirana.entity.Event;
 import org.example.kinotirana.repository.CinemaRep;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,8 +17,8 @@ public class CinemaService {
     public List<Cinema> getAll() {
         return cinemaRep.findByCinemaIsActiveTrue();
     }
-    public Cinema create(Cinema cinema) {
-        return cinemaRep.save(cinema);
+    public Cinema create(Cinema cinemas) {
+        return cinemaRep.save(cinemas);
     }
     @Transactional
     public Cinema update(Long cinemaId, Cinema newCinema) {

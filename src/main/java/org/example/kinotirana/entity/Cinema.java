@@ -30,6 +30,6 @@ public class Cinema {
     private Address cinemaAddress;
     private LocalTime cinemaOpeningTime;
     private LocalTime cinemaClosingTime;
-    private int cinemaOpeningDay;
+    private String cinemaOpeningDay;
     private boolean cinemaIsActive = true;
 }

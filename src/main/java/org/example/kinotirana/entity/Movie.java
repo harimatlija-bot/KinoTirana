@@ -2,11 +2,14 @@ package org.example.kinotirana.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.validator.constraints.URL;
-import org.hibernate.validator.constraints.time.DurationMin;
+import org.hibernate.validator.constraints.time.DurationMax;
+import org.springframework.boot.convert.DurationUnit;
 
 import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
@@ -33,12 +36,13 @@ public class Movie {
     private String movieDirector;
     @NotBlank
     private String movieCast;
-    @Lob
+    @Column(columnDefinition = "TEXT")
+    @NotBlank
     private String movieSynopsis;
     @Temporal(TemporalType.TIMESTAMP)
     private Date movieReleaseDate;
-    @DurationMin(minutes = 1)
-    private Duration movieDuration;
+    @NotNull
+    private Integer movieDuration;
     @URL(message = "Must be a valid URL")
     private String movieTrailerUrl;
     private boolean movieIsActive = true;
