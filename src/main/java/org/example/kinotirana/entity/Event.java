@@ -1,11 +1,10 @@
 package org.example.kinotirana.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,6 +14,7 @@ import java.util.Date;
 @Entity
 @Table(name = "Event")
 public class Event {
+    @JsonIgnoreProperties({"movieCinemas", "events"})
     @ManyToOne
     @JoinColumn(name = "cinemaId")
     private Cinema cinema;
@@ -27,9 +27,7 @@ public class Event {
     private String eventDescription;
     @NotBlank
     private String eventTitle;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date eventTimestamp;
-    @NotNull
+    private LocalDateTime eventTimestamp;
     @Embedded
     private Address eventLocation;
     private boolean eventOnline;

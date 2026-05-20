@@ -11,8 +11,8 @@ import java.util.List;
 @RequestMapping("/evente")
 public class EventController {
     private final EventService eventService;
-
     public EventController(EventService eventService) {
+
         this.eventService = eventService;
     }
     @GetMapping
@@ -24,7 +24,7 @@ public class EventController {
         return eventService.create(event);
     }
     @PutMapping("/{id}")
-    public Event update(@PathVariable Long id, @Valid @RequestBody Event event) {
+    public Event update(@PathVariable Long id,@Valid @RequestBody Event event) {
         return eventService.update(id, event);
     }
     @DeleteMapping("/{id}")

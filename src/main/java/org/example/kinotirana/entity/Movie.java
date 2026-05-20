@@ -1,16 +1,15 @@
 package org.example.kinotirana.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.validator.constraints.URL;
-import org.hibernate.validator.constraints.time.DurationMax;
-import org.springframework.boot.convert.DurationUnit;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -21,8 +20,15 @@ import java.util.List;
 @Entity
 @Table(name="MOVIE")
 public class Movie {
+    @JsonCreator
+    public Movie(@JsonProperty("movieId") Long movieId) {
+
+        this.movieId = movieId;
+    }
+    @JsonIgnoreProperties("movie")
     @OneToMany(mappedBy = "movie")
     private List<Review> reviews;
+    @JsonIgnoreProperties("movie")
     @OneToMany(mappedBy = "movie")
     private List<MovieCinema> movieCinemas;
     @Id
@@ -39,8 +45,7 @@ public class Movie {
     @Column(columnDefinition = "TEXT")
     @NotBlank
     private String movieSynopsis;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date movieReleaseDate;
+    private LocalDateTime movieReleaseDate;
     @NotNull
     private Integer movieDuration;
     @URL(message = "Must be a valid URL")

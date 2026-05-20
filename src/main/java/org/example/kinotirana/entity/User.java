@@ -1,10 +1,12 @@
 package org.example.kinotirana.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -15,6 +17,10 @@ import java.util.List;
 @Entity
 @Table(name = "USER_ACCOUNT")
 public class User {
+    @JsonCreator
+    public User(@JsonProperty("userId") Long userId) {
+        this.userId = userId;
+    }
     @OneToMany(mappedBy = "user")
     private List<Reservation> reservations;
     @OneToMany(mappedBy = "user")
@@ -32,7 +38,6 @@ public class User {
     @Size(min = 4, max = 32)
     private String userPassword;
     @Past
-    @Temporal(TemporalType.DATE)
-    private Date userBirthdate;
+    private LocalDateTime userBirthdate;
     private boolean userIsActive = true;
 }

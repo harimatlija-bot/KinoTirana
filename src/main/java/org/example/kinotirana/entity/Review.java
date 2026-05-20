@@ -3,9 +3,8 @@ package org.example.kinotirana.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -30,8 +29,6 @@ public class Review {
     private double reviewRate;
     @NotBlank
     private String reviewComment;
-    @NotNull
-    @CreationTimestamp
-    private Date reviewDate;
+    private LocalDateTime reviewDate;
     private boolean reviewIsActive = true;
 }

@@ -1,8 +1,6 @@
 package org.example.kinotirana.controller;
 
-import jakarta.validation.Valid;
 import org.example.kinotirana.entity.Cinema;
-import org.example.kinotirana.entity.Event;
 import org.example.kinotirana.service.CinemaService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,11 +19,11 @@ public class CinemaController {
         return cinemaService.getAll();
     }
     @PostMapping
-    public Cinema create(@Valid @RequestBody Cinema cinemas) {
+    public Cinema create(@RequestBody Cinema cinemas) {
         return cinemaService.create(cinemas);
     }
     @PutMapping("/{id}")
-    public Cinema update(@PathVariable Long id, @Valid @RequestBody Cinema cinemas) {
+    public Cinema update(@PathVariable Long id, @RequestBody Cinema cinemas) {
         return cinemaService.update(id, cinemas);
     }
     @DeleteMapping("/{id}")

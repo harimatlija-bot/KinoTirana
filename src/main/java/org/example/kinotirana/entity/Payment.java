@@ -3,9 +3,8 @@ package org.example.kinotirana.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -30,8 +29,7 @@ public class Payment {
     private boolean paymentCompleted = false;
     private String cardHolderName;
     private String cardLastFourDigits;
-    @CreationTimestamp
-    private Date paymentTimestamp;
+    private LocalDateTime paymentTimestamp;
     @NotNull
     private Long transactionNr;
     private boolean paymentIsActive = true;

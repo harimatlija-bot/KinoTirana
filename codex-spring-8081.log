@@ -1,0 +1,130 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/io/github/git-commit-id/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/cyclonedx/maven-metadata.xml
+Progress (1): 249 BProgress (2): 249 B | 255 BProgress (3): 249 B | 255 B | 243 BProgress (4): 249 B | 255 B | 243 B | 234 B                                           Downloaded from central: https://repo.maven.apache.org/maven2/io/github/git-commit-id/maven-metadata.xml (255 B at 286 B/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/maven-metadata.xml (234 B at 262 B/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml (249 B at 278 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jooq/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/cyclonedx/maven-metadata.xml (243 B at 271 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/liquibase/maven-metadata.xml
+Progress (1): 398 BProgress (2): 398 B | 394 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/jooq/maven-metadata.xml (398 B at 5.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Progress (2): 394 B | 242 BProgress (3): 394 B | 242 B | 375 B                                   Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/maven-metadata.xml (375 B at 3.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/liquibase/maven-metadata.xml (394 B at 4.3 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/graalvm/buildtools/maven-metadata.xml (242 B at 2.7 kB/s)
+Progress (1): 4.6 kBProgress (1): 9.7 kBProgress (1): 14 kB Progress (2): 14 kB | 3.1 kB                            Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 144 kB/s)
+Progress (1): 7.7 kBProgress (1): 12 kB Progress (1): 17 kBProgress (1): 20 kBProgress (1): 21 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 117 kB/s)
+[INFO] 
+[INFO] -----------------------< org.example:KinoTirana >-----------------------
+[INFO] Building KinoTirana 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.0.6:run (default-cli) > test-compile @ KinoTirana >>>
+[INFO] 
+[INFO] --- dependency:3.9.0:properties (default) @ KinoTirana ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ KinoTirana ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ KinoTirana ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ KinoTirana ---
+[INFO] skip non existing resourceDirectory C:\Users\User\IdeaProjects\KinoTirana\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ KinoTirana ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:4.0.6:run (default-cli) < test-compile @ KinoTirana <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.0.6:run (default-cli) @ KinoTirana ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.6)
+
+2026-05-20T14:30:12.208+02:00  INFO 6944 --- [KinoTirana] [           main] o.e.kinotirana.KinoTiranaApplication     : Starting KinoTiranaApplication using Java 23.0.1 with PID 6944 (C:\Users\User\IdeaProjects\KinoTirana\target\classes started by User in C:\Users\User\IdeaProjects\KinoTirana)
+2026-05-20T14:30:12.216+02:00  INFO 6944 --- [KinoTirana] [           main] o.e.kinotirana.KinoTiranaApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-05-20T14:30:13.500+02:00  INFO 6944 --- [KinoTirana] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-20T14:30:13.615+02:00  INFO 6944 --- [KinoTirana] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 8 JPA repository interfaces.
+2026-05-20T14:30:14.231+02:00  INFO 6944 --- [KinoTirana] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-05-20T14:30:14.263+02:00  INFO 6944 --- [KinoTirana] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T14:30:14.263+02:00  INFO 6944 --- [KinoTirana] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-20T14:30:14.347+02:00  INFO 6944 --- [KinoTirana] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2011 ms
+2026-05-20T14:30:14.597+02:00  INFO 6944 --- [KinoTirana] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-20T14:30:14.664+02:00  INFO 6944 --- [KinoTirana] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-20T14:30:15.380+02:00  INFO 6944 --- [KinoTirana] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-20T14:30:15.430+02:00  INFO 6944 --- [KinoTirana] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-20T14:30:15.663+02:00  INFO 6944 --- [KinoTirana] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7853363c
+2026-05-20T14:30:15.683+02:00  INFO 6944 --- [KinoTirana] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-20T14:30:15.780+02:00  INFO 6944 --- [KinoTirana] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/cinema]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: cinema/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-20T14:30:17.944+02:00  INFO 6944 --- [KinoTirana] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: set client_min_messages = WARNING
+Hibernate: alter table if exists event drop constraint if exists FKpx6go2atjhyjai1k8xyqdmhdo
+Hibernate: alter table if exists movie_cinema drop constraint if exists FK3bn2ho0qwu0c7tqfmxj8fuygn
+Hibernate: alter table if exists movie_cinema drop constraint if exists FK2trmgwjpvxxd4q7kcupa6m1vu
+Hibernate: alter table if exists payment drop constraint if exists FKrewpj5f9v9xehy4ga8g221nw1
+Hibernate: alter table if exists reservation drop constraint if exists FKjx1w8rasq17kr7nr9kgmyn7ol
+Hibernate: alter table if exists reservation drop constraint if exists FKcinbsb1axs6c5sh84ay3qixaq
+Hibernate: alter table if exists review drop constraint if exists FK8378dhlpvq0e9tnkn9mx0r64i
+Hibernate: alter table if exists review drop constraint if exists FK69d1gmuhx8wws2qh6auu1amab
+Hibernate: drop table if exists cinema cascade
+Hibernate: drop table if exists event cascade
+Hibernate: drop table if exists movie cascade
+Hibernate: drop table if exists movie_cinema cascade
+Hibernate: drop table if exists payment cascade
+Hibernate: drop table if exists reservation cascade
+Hibernate: drop table if exists review cascade
+Hibernate: drop table if exists user_account cascade
+Hibernate: create table cinema (cinema_closing_time time(0), cinema_is_active boolean not null, cinema_opening_time time(0), street_nr float(53), zip_code integer, cinema_id bigint generated by default as identity, cinema_name varchar(255) not null, cinema_opening_day varchar(255), city_name varchar(255), country varchar(255), street_name varchar(255), primary key (cinema_id))
+Hibernate: create table event (event_is_active boolean not null, event_online boolean not null, street_nr float(53), zip_code integer, cinema_id bigint, event_id bigint generated by default as identity, event_timestamp timestamp(6), city_name varchar(255), country varchar(255), event_access varchar(255) check ((event_access in ('PUBLIC','PRIVATE'))), event_title varchar(255) not null, street_name varchar(255), event_description oid, primary key (event_id))
+Hibernate: create table movie (movie_duration integer not null, movie_is_active boolean not null, movie_id bigint generated by default as identity, movie_release_date timestamp(6), movie_cast varchar(255) not null, movie_director varchar(255) not null, movie_genre varchar(255) not null, movie_synopsis TEXT not null, movie_title varchar(255) not null, movie_trailer_url varchar(255), primary key (movie_id))
+Hibernate: create table movie_cinema (mc_available_seats integer not null check ((mc_available_seats>=0)), mc_price float(53) not null, cinema_id bigint, mc_id bigint generated by default as identity, mc_timestamp timestamp(6), movie_id bigint, primary key (mc_id))
+Hibernate: create table payment (payment_amount float(53) not null, payment_completed boolean not null, payment_is_active boolean not null, payment_id bigint generated by default as identity, payment_timestamp timestamp(6), reservation_id bigint unique, transaction_nr bigint not null, card_holder_name varchar(255), card_last_four_digits varchar(255), payment_method varchar(255) check ((payment_method in ('CASH','CREDIT_CARD','PAYPAL','PAGO'))), payment_status varchar(255) check ((payment_status in ('PENDING','COMPLETED','FAILED'))), primary key (payment_id))
+Hibernate: create table reservation (reservation_confirmed boolean not null, reservation_is_active boolean not null, mc_id bigint, reservation_id bigint generated by default as identity, reservation_timestamp timestamp(6), user_id bigint, primary key (reservation_id))
+Hibernate: create table review (review_is_active boolean not null, review_rate float(53) not null check ((review_rate>=1) and (review_rate<=10)), movie_id bigint, review_date timestamp(6), review_id bigint generated by default as identity, user_id bigint, review_comment varchar(255) not null, primary key (review_id))
+Hibernate: create table user_account (user_is_active boolean not null, user_birthdate timestamp(6), user_id bigint generated by default as identity, user_password varchar(32) not null, user_email varchar(255) not null, user_name varchar(255) not null, user_surname varchar(255) not null, primary key (user_id))
+Hibernate: alter table if exists event add constraint FKpx6go2atjhyjai1k8xyqdmhdo foreign key (cinema_id) references cinema
+Hibernate: alter table if exists movie_cinema add constraint FK3bn2ho0qwu0c7tqfmxj8fuygn foreign key (cinema_id) references cinema
+Hibernate: alter table if exists movie_cinema add constraint FK2trmgwjpvxxd4q7kcupa6m1vu foreign key (movie_id) references movie
+Hibernate: alter table if exists payment add constraint FKrewpj5f9v9xehy4ga8g221nw1 foreign key (reservation_id) references reservation
+Hibernate: alter table if exists reservation add constraint FKjx1w8rasq17kr7nr9kgmyn7ol foreign key (mc_id) references movie_cinema
+Hibernate: alter table if exists reservation add constraint FKcinbsb1axs6c5sh84ay3qixaq foreign key (user_id) references user_account
+Hibernate: alter table if exists review add constraint FK8378dhlpvq0e9tnkn9mx0r64i foreign key (movie_id) references movie
+Hibernate: alter table if exists review add constraint FK69d1gmuhx8wws2qh6auu1amab foreign key (user_id) references user_account
+2026-05-20T14:30:18.310+02:00  INFO 6944 --- [KinoTirana] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-20T14:30:18.440+02:00  INFO 6944 --- [KinoTirana] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-20T14:30:19.225+02:00  WARN 6944 --- [KinoTirana] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-20T14:30:19.976+02:00  INFO 6944 --- [KinoTirana] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-05-20T14:30:20.008+02:00  INFO 6944 --- [KinoTirana] [           main] o.e.kinotirana.KinoTiranaApplication     : Started KinoTiranaApplication in 8.506 seconds (process running for 9.459)
+2026-05-20T14:30:20.009+02:00  WARN 6944 --- [KinoTirana] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-05-20T14:30:20.009+02:00  WARN 6944 --- [KinoTirana] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-05-20T14:30:20.360+02:00  INFO 6944 --- [KinoTirana] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-20T14:30:20.382+02:00  INFO 6944 --- [KinoTirana] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-20T14:30:20.382+02:00  INFO 6944 --- [KinoTirana] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-20T14:30:20.632+02:00  WARN 6944 --- [KinoTirana] [nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot map `null` into type `boolean` (set `DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES` to 'false' to allow)]

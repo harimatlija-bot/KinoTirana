@@ -1,4 +1,11 @@
 package org.example.kinotirana.entity;
 
-public enum EventAccess {PUBLIC, PRIVATE
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+public enum EventAccess {
+    PUBLIC, PRIVATE;
+    @JsonCreator
+    public static EventAccess fromString(String value) {
+        return value == null ? null : EventAccess.valueOf(value.toUpperCase());
+    }
 }

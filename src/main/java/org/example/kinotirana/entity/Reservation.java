@@ -1,10 +1,12 @@
 package org.example.kinotirana.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,6 +15,10 @@ import java.util.Date;
 @Entity
 @Table(name = "RESERVATION")
 public class Reservation {
+    @JsonCreator
+    public Reservation(@JsonProperty("reservationId") Long reservationId) {
+        this.reservationId = reservationId;
+    }
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user;
@@ -24,8 +30,7 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservationId;
-    @CreationTimestamp
-    private Date reservationTimestamp;
+    private LocalDateTime reservationTimestamp;
     private boolean reservationConfirmed;
     private boolean reservationIsActive = true;
 }
