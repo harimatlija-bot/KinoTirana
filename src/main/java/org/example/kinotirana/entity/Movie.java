@@ -1,15 +1,13 @@
 package org.example.kinotirana.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.validator.constraints.URL;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -17,14 +15,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@JsonIgnoreProperties({"reviews", "movieCinemas"})
 @Entity
 @Table(name="MOVIE")
 public class Movie {
-    @JsonCreator
-    public Movie(@JsonProperty("movieId") Long movieId) {
-
-        this.movieId = movieId;
-    }
     @JsonIgnoreProperties("movie")
     @OneToMany(mappedBy = "movie")
     private List<Review> reviews;
@@ -45,7 +39,7 @@ public class Movie {
     @Column(columnDefinition = "TEXT")
     @NotBlank
     private String movieSynopsis;
-    private LocalDateTime movieReleaseDate;
+    private LocalDate movieReleaseDate;
     @NotNull
     private Integer movieDuration;
     @URL(message = "Must be a valid URL")

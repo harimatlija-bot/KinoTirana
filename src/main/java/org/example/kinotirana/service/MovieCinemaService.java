@@ -2,6 +2,7 @@ package org.example.kinotirana.service;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.kinotirana.dto.MovieCinemaRequest;
 import org.example.kinotirana.entity.Cinema;
 import org.example.kinotirana.entity.Movie;
 import org.example.kinotirana.entity.MovieCinema;
@@ -28,30 +29,29 @@ public class MovieCinemaService {
         this.movieRep = movieRep;
         this.cinemaRep = cinemaRep;
     }
+    public MovieCinema create (MovieCinemaRequest movieCinemaRequest){
+    Movie movie = movieRep.findById(movieCinemaRequest.getMovieId())
+            .orElseThrow(() -> new RuntimeException("Movie not found"));
+
+    Cinema cinema = cinemaRep.findById(movieCinemaRequest.getCinemaId())
+                .orElseThrow(() -> new RuntimeException("Cinema not found"));
+
+    boolean exists = movieCinemaRep.existsByMovieAndCinemaAndMcTimestamp
+            (movie, cinema, movieCinemaRequest.getMcTimestamp());
+    if(exists){
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This movie is already registered into this cinema");
+    }
+    MovieCinema movieCinema = new MovieCinema();
+    movieCinema.setMovie(movie);
+    movieCinema.setCinema(cinema);
+    movieCinema.setMcTimestamp(movieCinemaRequest.getMcTimestamp());
+    movieCinema.setMcPrice(movieCinemaRequest.getMcPrice());
+    movieCinema.setMcAvailableSeats(movieCinemaRequest.getMcAvailableSeats());
+    return movieCinemaRep.save(movieCinema);
+    }
     public List<MovieCinema> getAll(){
 
         return movieCinemaRep.findAll();
-    }
-    public MovieCinema create(MovieCinema movieCinema) {
-        if (movieCinema.getMovie() == null || movieCinema.getMovie().getMovieId() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "movie.movieId is required");
-        }
-        if (movieCinema.getCinema() == null || movieCinema.getCinema().getCinemaId() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "cinema.cinemaId is required");
-        }
-        Long movieId = movieCinema.getMovie().getMovieId();
-        Long cinemaId = movieCinema.getCinema().getCinemaId();
-
-        Movie movie = movieRep.findById(movieId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Movie not found"));
-
-        Cinema cinema = cinemaRep.findById(cinemaId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Cinema not found"));
-
-        movieCinema.setMovie(movie);
-        movieCinema.setCinema(cinema);
-
-        return movieCinemaRep.save(movieCinema);
     }
     @Transactional
     public MovieCinema update(Long mcId, MovieCinema newMovieCinema) {

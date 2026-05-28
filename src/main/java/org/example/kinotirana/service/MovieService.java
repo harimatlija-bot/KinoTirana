@@ -2,8 +2,10 @@ package org.example.kinotirana.service;
 
 import org.example.kinotirana.entity.Movie;
 import org.example.kinotirana.repository.MovieRep;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -16,7 +18,13 @@ public class MovieService {
     public List<Movie> getAll(){
         return movieRep.findByMovieIsActiveTrue();
     }
-    public Movie create (Movie movie){
+    public Movie create (Movie movie) {
+        if (movieRep.existsByMovieTitleAndMovieReleaseDate(
+                movie.getMovieTitle(),
+                movie.getMovieReleaseDate()
+        )) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Duplicate value");
+        }
         return movieRep.save(movie);
     }
     @Transactional

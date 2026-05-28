@@ -1,10 +1,11 @@
 package org.example.kinotirana.service;
 
 import org.example.kinotirana.entity.Cinema;
-import org.example.kinotirana.entity.Event;
 import org.example.kinotirana.repository.CinemaRep;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -18,6 +19,12 @@ public class CinemaService {
         return cinemaRep.findByCinemaIsActiveTrue();
     }
     public Cinema create(Cinema cinemas) {
+        if (cinemaRep.existsByCinemaNameAndCinemaAddress(
+                cinemas.getCinemaName(),
+                cinemas.getCinemaAddress()
+        )) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Duplicate cinema");
+        }
         return cinemaRep.save(cinemas);
     }
     @Transactional

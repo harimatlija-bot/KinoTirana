@@ -1,6 +1,7 @@
 package org.example.kinotirana.controller;
 
 import jakarta.validation.Valid;
+import org.example.kinotirana.dto.ReservationRequest;
 import org.example.kinotirana.entity.Reservation;
 import org.example.kinotirana.service.ReservationService;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +21,8 @@ public class ReservationController {
         return reservationService.getAll();
     }
     @PostMapping
-    public Reservation create(@Valid @RequestBody Reservation reservation) {
-        return reservationService.create(reservation);
+    public Reservation create(@Valid @RequestBody ReservationRequest reservationRequest) {
+        return reservationService.create(reservationRequest);
     }
     @PutMapping("/{id}")
     public Reservation update(@PathVariable Long id, @Valid @RequestBody Reservation reservation) {

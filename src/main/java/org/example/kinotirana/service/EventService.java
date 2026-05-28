@@ -1,5 +1,6 @@
 package org.example.kinotirana.service;
 
+import org.example.kinotirana.dto.EventRequest;
 import org.example.kinotirana.entity.Cinema;
 import org.example.kinotirana.entity.Event;
 import org.example.kinotirana.repository.CinemaRep;
@@ -25,15 +26,24 @@ public class EventService {
         return eventRep.findByEventIsActiveTrue();
     }
 
-    public Event create(Event event) {
-        if (event.getCinema() == null || event.getCinema().getCinemaId() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "cinema.cinemaId is required");
-             }
-        Long cinemaId = event.getCinema().getCinemaId();
-        Cinema cinema = cinemaRep.findById(cinemaId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cinema not found"));
-
+    public Event create(EventRequest eventRequest) {
+        Cinema cinema = cinemaRep.findById(eventRequest.getCinemaId())
+                .orElseThrow(() -> new RuntimeException("Cinema not found"));
+        if (eventRep.existsByEventTitleAndEventTimestampAndEventLocation(
+                eventRequest.getEventTitle(),
+                eventRequest.getEventTimestamp(),
+                eventRequest.getEventLocation()
+        )){throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "This event already exists");
+        }
+        Event event = new Event();
         event.setCinema(cinema);
         event.setEventIsActive(true);
+        event.setEventAccess(eventRequest.getEventAccess());
+        event.setEventDescription(eventRequest.getEventDescription());
+        event.setEventLocation(eventRequest.getEventLocation());
+        event.setEventTimestamp(eventRequest.getEventTimestamp());
+        event.setEventTitle(eventRequest.getEventTitle());
+        event.setEventOnline(eventRequest.isEventOnline());
         return eventRep.save(event);
     }
     @Transactional

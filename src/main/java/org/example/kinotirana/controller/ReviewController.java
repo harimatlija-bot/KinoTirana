@@ -1,6 +1,7 @@
 package org.example.kinotirana.controller;
 
 import jakarta.validation.Valid;
+import org.example.kinotirana.dto.ReviewRequest;
 import org.example.kinotirana.entity.Review;
 import org.example.kinotirana.service.ReviewService;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,8 @@ public class ReviewController {
         return reviewService.getAll();
     }
     @PostMapping
-    public Review create(@Valid @RequestBody Review review) {
-        return reviewService.create(review);
+    public Review create(@Valid @RequestBody ReviewRequest reviewRequest) {
+        return reviewService.create(reviewRequest);
     }
     @PutMapping("/{id}")
     public Review update(@PathVariable Long id, @Valid @RequestBody Review review) {

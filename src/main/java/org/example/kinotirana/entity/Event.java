@@ -23,7 +23,7 @@ public class Event {
     private Long eventId;
     @Enumerated(EnumType.STRING)
     private EventAccess eventAccess;
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String eventDescription;
     @NotBlank
     private String eventTitle;

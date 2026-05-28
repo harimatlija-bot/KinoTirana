@@ -1,8 +1,6 @@
 package org.example.kinotirana.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -15,13 +13,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@JsonIgnoreProperties({"reservations"})
 @Entity
 @Table(name="MOVIE_CINEMA")
 public class MovieCinema {
-    @JsonCreator
-    public MovieCinema(@JsonProperty("mcId") Long mcId) {
-        this.mcId = mcId;
-    }
     @JsonIgnoreProperties("movieCinema")
     @OneToMany(mappedBy = "movieCinema")
     private List<Reservation> reservations;

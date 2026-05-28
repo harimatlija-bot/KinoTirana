@@ -1,6 +1,7 @@
 package org.example.kinotirana.controller;
 
 import jakarta.validation.Valid;
+import org.example.kinotirana.dto.PaymentRequest;
 import org.example.kinotirana.entity.Payment;
 import org.example.kinotirana.service.PaymentService;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +21,8 @@ public class PaymentController {
         return paymentService.getAll();
     }
     @PostMapping
-    public Payment create(@Valid @RequestBody Payment payment) {
-        return paymentService.create(payment);
+    public Payment create(@Valid @RequestBody PaymentRequest paymentRequest) {
+        return paymentService.create(paymentRequest);
     }
     @PutMapping("/{id}")
     public Payment update(@PathVariable Long id, @Valid @RequestBody Payment payment) {

@@ -1,7 +1,6 @@
 package org.example.kinotirana.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,13 +11,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@JsonIgnoreProperties({"payment"})
 @Entity
 @Table(name = "RESERVATION")
 public class Reservation {
-    @JsonCreator
-    public Reservation(@JsonProperty("reservationId") Long reservationId) {
-        this.reservationId = reservationId;
-    }
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user;
